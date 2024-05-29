@@ -13,10 +13,13 @@ def main():
     while t < P.t_end:
         t_next_plot = t + P.t_plot
         while t < t_next_plot:
-            state = dynamics.update(t)
+            sat_state, wrench_state = dynamics.update(t)
             t = t + P.Ts
 
-        animator.update((state.item(0), state.item(1)))
+        sat_coord = sat_state[0:2]
+        wrench_coord = wrench_state[0:2]
+
+        animator.update(sat_coord, wrench_coord)
         t = t + P.t_plot
         plt.pause(0.0001)
 

@@ -20,5 +20,5 @@ G = 1
 radius_earth = 0.5
 radius_satellite = 0.04
 radius_satellite_trace = 0.01
-radius_wrench = 0.01
+radius_wrench = 0.03
 trace_memory = 175
